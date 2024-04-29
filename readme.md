@@ -44,13 +44,23 @@ $inventory = ["sword", "shield"];
 
 Stack -> Heap
 ```
-name ZVAL -> John
-clan ZVAL -> NULL // Não aloca na heap
-hitPoints ZVAL -> 100
-inventory ZVAL -> [
-    0 -> ZVAL -> sword
-    1 -> ZVAL  -> shield
+name ZVAL 
+clan ZVAL 
+hitPoints ZVAL
+inventory ZVAL
+```
+
+Heap
+```
+John
+100
+sword
+shield
+[
+    0 -> ZVAL
+    1 -> ZVAL
 ] 
+
 ```
 
 ```PHP
@@ -58,11 +68,15 @@ $a = "hammer";
 $b = $a;
 $c = $b;
 ```
-Stack -> Heap
+Stack
 ```
-a ZVAL -> hammer // aloca na heap
-b ZVAL -> aponta para o mesmo endereço de a
-c ZVAL -> aponta para o mesmo endereço de a
+a ZVAL
+b ZVAL
+c ZVAL
+```
+Heap
+```
+hammer
 ```
 
 ```PHP
@@ -72,12 +86,17 @@ $c = $b;
 $b = "sword";
 ```
 
-Stack -> Heap
+Stack
 ```
-a ZVAL -> hammer // aloca na heap
-b ZVAL -> aponta para o mesmo endereço de a
-c ZVAL -> aponta para o mesmo endereço de a
-b ZVAL -> sword // aloca na heap
+a ZVAL
+b ZVAL
+c ZVAL
+b ZVAL
+```
+Heap
+```
+hammer
+sword
 ```
 
 ### Assign by Reference

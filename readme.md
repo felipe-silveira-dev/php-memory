@@ -31,7 +31,7 @@ O Garbage Collection é um processo que é responsável por liberar a memória q
 
 O PHP é uma linguagem de script que é interpretada pelo Zend Engine. O Zend Engine é responsável por interpretar o código PHP e executá-lo.
 A Zend Engine tem esse conceito do ZVAL, é a união de todos diferentes tipos null, string, etc..., isso significa que o PHP aloca 128 bits para cada variável, independente do tipo dela.
-O PHP usa a memória Heap na maioria das vezes. Se você criar um objeto ou um array em PHP, ele será alocado na memória Heap.
+O PHP usa a memória Heap na maioria das vezes. Se você criar um objeto em PHP, ele será alocado na memória Heap.
 
 ### Simple Assignment
 
@@ -42,7 +42,7 @@ $hitPoints = 100;
 $inventory = ["sword", "shield"];
 ```
 
-Stack -> Heap
+Stack
 ```
 name ZVAL 
 clan ZVAL 
@@ -62,6 +62,7 @@ shield
 ] 
 
 ```
+--------------
 
 ```PHP
 $a = "hammer";
@@ -78,6 +79,7 @@ Heap
 ```
 hammer
 ```
+-------------
 
 ```PHP
 $a = "hammer";
@@ -98,7 +100,7 @@ Heap
 hammer
 sword
 ```
-
+--------------
 ### Assign by Reference
 
 ```PHP
@@ -118,6 +120,7 @@ Heap
 ```
 sword
 ```
+-------------
 
 ### Dicas para otimizar a memória
 
